@@ -1,43 +1,25 @@
-# 🚀 Fine-Tuning Pretrained Models on Custom Datasets
+# 🧠 Qwen2-VL Fine-tuning on LaTeX Image-Text Dataset
 
-This repository demonstrates how to fine-tune powerful pretrained models on custom datasets for domain-specific tasks. Whether it's an LLM, vision model, or audio transformer, this setup offers an efficient way to adapt SOTA models to your specific use case using minimal code.
+This project demonstrates how to fine-tune Alibaba’s [Qwen2-VL](https://huggingface.co/Qwen/Qwen2-VL) vision-language model to understand and generate LaTeX code from complex images.
 
-## 🔧 Features
+> 📍 Notebook hosted on: [Kaggle Notebook Link](https://www.kaggle.com/code/yasirfarooqui07/qwen2-vl-finetune-latex)
 
-- Fine-tune pretrained models (LLMs, vision, etc.)
-- Support for LoRA / QLoRA / PEFT
-- Custom dataset loading and preprocessing
-- Training and evaluation scripts
-- Integration with 🤗 Transformers and Datasets
+## 📚 Objective
 
-## 🧠 Use Cases
+- Fine-tune `Qwen2-VL` to generate LaTeX code from visual prompts.
+- Leverage visual tokenization with `unsloth`, LoRA, and Hugging Face's trainer.
 
-- Domain-specific Q&A
-- Custom classification tasks
-- Visual recognition tasks
-- Multimodal inference (vision + text)
+## 🚀 Features
 
-## 📁 Project Structure
+- Uses `Unsloth` for optimized memory-efficient fine-tuning
+- LoRA-based parameter-efficient training
+- Mixed image-text support
+- Notebook-friendly, Kaggle GPU-ready setup
 
-├── data/ # Your custom dataset
-├── src/ # Training and inference scripts
-├── configs/ # Training configs and model params
-├── notebooks/ # Jupyter demos and visualizations
-├── README.md # This file
+## 🛠 Setup
 
+You don’t need to install anything on Kaggle — just enable GPU in settings.
 
-## ⚙️ Technologies Used
-
-- Python, PyTorch
-- Huggingface Transformers + Datasets
-- PEFT / LoRA / QLoRA (Optional)
-- LangChain / Gradio (Optional for Deployment)
-- Weights & Biases or TensorBoard for logging
-
-## 🚀 Quick Start
-
+If running locally:
 ```bash
-git clone https://github.com/faryasir07/fine_tuning.git
-cd <fine_tuning>
-pip install -r requirements.txt
-python src/train.py --config configs/config.yaml
+pip install unsloth peft trl bitsandbytes transformers accelerate datasets
